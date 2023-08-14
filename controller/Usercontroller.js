@@ -20,9 +20,13 @@ export const createJson = async (resq, resp) => {
   }
   try {
     const createdata = await Usermodel.create({ user: user, data: Jsondata });
-    console.log(createdata);
+    return resp.status(201).json({
+      message: "Your api created",
+    });
   } catch (error) {
-    console.log(error);
+    return resp.status(500).json({
+      message: "Server error",
+    });
   }
 };
 
