@@ -14,7 +14,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(routes);
+ConnectDb();
 app.listen(process.env.PORT, () => {
-  ConnectDb();
   console.log("server is running...");
 });
